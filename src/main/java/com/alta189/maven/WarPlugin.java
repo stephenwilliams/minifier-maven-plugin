@@ -64,8 +64,8 @@ public class WarPlugin {
 				Xpp3Dom directory = new Xpp3Dom("directory");
 				directory.setValue(file.getParentFile().getAbsolutePath());
 
-				Xpp3Dom targetDir = new Xpp3Dom("targetDir");
-				targetDir.setValue(getTargetDir(file).getAbsolutePath());
+				Xpp3Dom targetPath = new Xpp3Dom("targetPath");
+				targetPath.setValue(getTargetDir(file).getAbsolutePath());
 
 				Xpp3Dom filtering = new Xpp3Dom("filtering");
 				filtering.setValue("false");
@@ -73,7 +73,7 @@ public class WarPlugin {
 				Xpp3Dom includes = new Xpp3Dom("includes");
 
 				// Build resource
-				resource.addChild(targetDir);
+				resource.addChild(targetPath);
 				resource.addChild(directory);
 				resource.addChild(filtering);
 				resource.addChild(includes);
