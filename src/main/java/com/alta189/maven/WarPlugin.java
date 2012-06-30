@@ -23,6 +23,9 @@ public class WarPlugin {
 		MavenProject project = mojo.getProject();
 		Plugin plugin = project.getPlugin("org.apache.maven.plugins:maven-war-plugin");
 		Xpp3Dom config = CastUtil.safeCast(plugin.getConfiguration());
+		if (config == null) {
+			config = new Xpp3Dom("configuration");
+		}
 
 		// Get existing web resources
 		Xpp3Dom webResources = config.getChild("webResources");
@@ -45,6 +48,9 @@ public class WarPlugin {
 
 		// add webResources back to the config
 		config.addChild(webResources);
+
+		plugin.setConfiguration(config);
+
 	}
 
 	public Collection<Xpp3Dom> getResources() {
