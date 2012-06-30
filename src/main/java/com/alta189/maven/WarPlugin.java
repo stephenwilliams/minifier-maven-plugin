@@ -77,6 +77,7 @@ public class WarPlugin {
 				resource.addChild(directory);
 				resource.addChild(filtering);
 				resource.addChild(includes);
+				result.put(directory.getValue(), resource);
 			}
 
 			Xpp3Dom includes = resource.getChild("includes");
