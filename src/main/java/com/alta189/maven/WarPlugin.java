@@ -92,7 +92,7 @@ public class WarPlugin {
 	}
 
 	private File getTargetDir(File file) {
-		String path = file.getAbsolutePath().substring(mojo.getWebappSourceDir().getAbsolutePath().length());
+		String path = file.getAbsolutePath().substring(mojo.getWebappTargetDir().getAbsolutePath().length());
 		if (path.startsWith("\\") || path.startsWith("/")) {
 			path = path.substring(1);
 		}
